@@ -1,0 +1,17 @@
+
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Enhanced deployment test - Simple S3 bucket with boto3 upload'
+
+Resources:
+  TestBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub 'enhanced-test-${AWS::StackName}-${AWS::AccountId}'
+      PublicReadPolicy: false
+      
+Outputs:
+  BucketName:
+    Description: 'Name of the created S3 bucket'
+    Value: !Ref TestBucket
+    Export:
+      Name: !Sub '${AWS::StackName}-BucketName'

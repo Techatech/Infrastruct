@@ -1,0 +1,8 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Test deployment with Kiro IDE Nova-Act'
+
+Resources:
+  TestBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub 'kiro-test-${AWS::StackName}-${AWS::AccountId}'

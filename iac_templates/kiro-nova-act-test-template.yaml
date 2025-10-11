@@ -1,0 +1,17 @@
+
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Kiro Nova-Act Test Deployment - Simple S3 bucket'
+
+Resources:
+  KiroTestBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub 'kiro-test-${AWS::StackName}-${AWS::AccountId}'
+      PublicReadPolicy: false
+      
+Outputs:
+  BucketName:
+    Description: 'Name of the created S3 bucket'
+    Value: !Ref KiroTestBucket
+    Export:
+      Name: !Sub '${AWS::StackName}-BucketName'

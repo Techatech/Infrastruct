@@ -1,0 +1,17 @@
+
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Test deployment - Simple S3 bucket'
+
+Resources:
+  TestBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub 'test-bucket-${AWS::StackName}-${AWS::AccountId}'
+      PublicReadPolicy: false
+      
+Outputs:
+  BucketName:
+    Description: 'Name of the created S3 bucket'
+    Value: !Ref TestBucket
+    Export:
+      Name: !Sub '${AWS::StackName}-BucketName'

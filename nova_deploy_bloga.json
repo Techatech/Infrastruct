@@ -1,0 +1,75 @@
+{
+  "task": "Deploy AWS CloudFormation Stack",
+  "description": "Automated deployment of bloga using CloudFormation",
+  "steps": [
+    {
+      "action": "navigate",
+      "url": "https://console.aws.amazon.com/cloudformation/home",
+      "description": "Navigate to AWS CloudFormation Console"
+    },
+    {
+      "action": "click",
+      "selector": "Create stack",
+      "description": "Click Create stack button"
+    },
+    {
+      "action": "click",
+      "selector": "With new resources (standard)",
+      "description": "Select standard stack creation"
+    },
+    {
+      "action": "select_radio",
+      "selector": "Amazon S3 URL",
+      "description": "Select S3 URL template source"
+    },
+    {
+      "action": "input",
+      "selector": "S3 URL",
+      "value": "https://your-s3-bucket.s3.amazonaws.com/template.yaml",
+      "description": "Enter template URL: https://your-s3-bucket.s3.amazonaws.com/template.yaml"
+    },
+    {
+      "action": "click",
+      "selector": "Next",
+      "description": "Proceed to stack details"
+    },
+    {
+      "action": "input",
+      "selector": "Stack name",
+      "value": "bloga",
+      "description": "Enter stack name: bloga"
+    },
+    {
+      "action": "click",
+      "selector": "Next",
+      "description": "Proceed to configure options"
+    },
+    {
+      "action": "click",
+      "selector": "Next",
+      "description": "Proceed to review"
+    },
+    {
+      "action": "check",
+      "selector": "I acknowledge that AWS CloudFormation might create IAM resources",
+      "description": "Acknowledge IAM resource creation"
+    },
+    {
+      "action": "click",
+      "selector": "Submit",
+      "description": "Submit stack creation"
+    },
+    {
+      "action": "wait_for_status",
+      "status": "CREATE_COMPLETE",
+      "timeout": 900,
+      "description": "Wait for stack creation to complete (up to 15 minutes)"
+    }
+  ],
+  "metadata": {
+    "stack_name": "bloga",
+    "template_url": "https://your-s3-bucket.s3.amazonaws.com/template.yaml",
+    "expected_duration": "5-15 minutes",
+    "created_by": "AWS Infrastruct Tool"
+  }
+}

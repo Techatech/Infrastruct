@@ -1,0 +1,28 @@
+# GUI Requirements for AWS Infrastruct
+# Core dependencies (assuming you already have these from your CLI version)
+strands
+strands-tools
+python-dotenv
+boto3
+
+# Additional GUI dependencies
+PyYAML>=6.0
+Pillow>=9.0.0  # For image handling in diagrams
+
+# Enhanced diagram generation
+diagrams>=0.23.0
+graphviz>=0.20.0
+
+# Database for chat history
+sqlite3  # Built into Python, but listed for clarity
+
+# Web-based diagram rendering (built-in modules)
+# webbrowser, tempfile, base64, json - all built into Python
+
+# Enhanced deployment with browser automation
+nova-act  # Amazon Nova-Act SDK for browser automation
+# Note: If nova-act installation fails, run: python install_nova_act.py
+# Or manually: pip install nova-act
+
+# Optional: For enhanced text editing in the template view
+# tkinter is built into Python, so no need to install it
