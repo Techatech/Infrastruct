@@ -52,6 +52,7 @@ A comprehensive AWS infrastructure management tool with both GUI and CLI interfa
 1. Install the enhanced requirements:
 ```bash
 pip install -r requirements_gui.txt
+pip install -r requirements.txt
 ```
 
 2. Install Graphviz (required for diagrams library):
